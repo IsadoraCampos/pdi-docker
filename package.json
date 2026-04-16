@@ -1,7 +1,10 @@
 {
-  "name": "meu-app",
+  "name": "app",
   "version": "1.0.0",
   "scripts": {
-    "start": "node index.js"
+    "start": "node app/index.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
   }
 }
