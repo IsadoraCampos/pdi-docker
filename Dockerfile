@@ -13,7 +13,8 @@ WORKDIR /app
 # tive que colocar dois copys porque ao fazer COPY . . ele tava criando app/app/index.js assim não achava o app/index.js
 COPY package*.json ./
 RUN npm install
-COPY . .
+COPY app/ .
+COPY views/ ./views
 
 RUN chown -R userapp:userapp /app
 USER userapp
