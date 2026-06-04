@@ -13,8 +13,7 @@ WORKDIR /app
 # tive que colocar dois copys porque ao fazer COPY . . ele tava criando app/app/index.js assim não achava o app/index.js
 COPY package*.json ./
 RUN npm install
-COPY app/ .
-COPY views/ ./views
+COPY . .
 
 RUN chown -R userapp:userapp /app
 USER userapp
@@ -23,4 +22,6 @@ USER userapp
 EXPOSE 3000
 
 #comando que roda quando o container for iniciado
-CMD ["npm", "start"]
+CMD ["npm", "run", "dev"]
+
+#criar volume docker run -p 3000:3000 -v $(pwd):/app meu-app

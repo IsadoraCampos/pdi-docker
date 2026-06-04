@@ -8,12 +8,11 @@ app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
 
-app.arguments('/styles', express.static(path.join(__dirname, '/styles')));
-
-app.use('/src', express.static(path.join(__dirname, '../src')));
+app.use(express.static('public'));
+app.use('/styles', express.static('styles'));
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '/views/index.html'));
+    res.sendFile(path.join(__dirname, '../views/index.html'));
 });
 
 console.log("Hello Docker!");
