@@ -21722,6 +21722,9 @@
   // src/main.tsx
   var import_client = __toESM(require_client());
 
+  // components/app/App.tsx
+  var import_react = __toESM(require_react());
+
   // components/button/Button.tsx
   var import_jsx_runtime = __toESM(require_jsx_runtime());
   var Button = ({
@@ -21732,19 +21735,39 @@
     return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", { className, onClick: action, children: description });
   };
 
-  // components/app/App.tsx
+  // components/input/Input.tsx
   var import_jsx_runtime2 = __toESM(require_jsx_runtime());
+  var Input = ({
+    id,
+    type,
+    label,
+    placeholder,
+    className,
+    required = false
+  }) => {
+    return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("label", { htmlFor: id, children: label }),
+      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("input", { id, type, placeholder, required })
+    ] });
+  };
+
+  // components/app/App.tsx
+  var import_jsx_runtime3 = __toESM(require_jsx_runtime());
   var App = () => {
-    return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("h1", { className: "title", children: "Welcome!" }),
-      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)(Button, { description: "Click me!" })
+    const [showInput, setShowInput] = (0, import_react.useState)(false);
+    return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h1", { className: "title", children: "Welcome!" }),
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Button, { description: "Click me!", className: "button", action: () => {
+        setShowInput((prev) => !prev);
+      } }),
+      showInput && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Input, { id: "teste", type: "text", label: "Digite seu nome" })
     ] });
   };
 
   // src/main.tsx
-  var import_jsx_runtime3 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime4 = __toESM(require_jsx_runtime());
   var Root = import_client.default.createRoot(document.getElementById("root"));
-  Root.render(/* @__PURE__ */ (0, import_jsx_runtime3.jsx)(App, {}));
+  Root.render(/* @__PURE__ */ (0, import_jsx_runtime4.jsx)(App, {}));
 })();
 /*! Bundled license information:
 

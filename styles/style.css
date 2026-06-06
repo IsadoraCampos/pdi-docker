@@ -1,3 +1,22 @@
+body {
+    color: #1B0C0C;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+
 .title {
     color: #483d8b;
+}
+
+.button {
+    background-color: #9AD872;
+    border-radius: 4px;
+    font-size: 12px;
+    width: 65px;
+    border: none;
+    padding: 2px 4px;
+}
+
+.button:hover {
+    cursor: pointer;
 }
