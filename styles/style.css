@@ -1,11 +1,14 @@
 body {
     color: #1B0C0C;
+    background-color: #eaf2fa;
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
 }
 
 .title {
+    font-size: 24px;
     color: #483d8b;
+    font-weight: 700;
 }
 
 .button {
@@ -27,8 +30,16 @@ body {
 }
 
 .header {
+    border-radius: 3px;
+    padding: 0 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: rgb(190, 186, 186);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
 }
