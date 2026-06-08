@@ -1,9 +1,10 @@
+import React from 'react';
 import { ButtonProps } from './types';
 
-export const Button = ({
+export const Button: React.FC<ButtonProps> = ({
     description,
     className,
     action
-}: ButtonProps) => {
+}) => {
     return <button className={className} onClick={action}>{description}</button>;
 }

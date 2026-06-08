@@ -21746,28 +21746,40 @@
     required = false
   }) => {
     return /* @__PURE__ */ (0, import_jsx_runtime2.jsxs)("div", { className, children: [
-      /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("label", { htmlFor: id, children: label }),
+      label && /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("label", { htmlFor: id, children: label }),
       /* @__PURE__ */ (0, import_jsx_runtime2.jsx)("input", { id, type, placeholder, required })
     ] });
   };
 
-  // components/app/App.tsx
+  // components/header/Header.tsx
   var import_jsx_runtime3 = __toESM(require_jsx_runtime());
+  var Header = ({ title, className }) => {
+    return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { className, children: [
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h1", { className: "title", children: title }),
+      /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { children: [
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Button, { description: "Hello", className: "button" }),
+        /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Button, { description: "Hola", className: "button" })
+      ] })
+    ] });
+  };
+
+  // components/app/App.tsx
+  var import_jsx_runtime4 = __toESM(require_jsx_runtime());
   var App = () => {
     const [showInput, setShowInput] = (0, import_react.useState)(false);
-    return /* @__PURE__ */ (0, import_jsx_runtime3.jsxs)("div", { children: [
-      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)("h1", { className: "title", children: "Welcome!" }),
-      /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Button, { description: "Click me!", className: "button", action: () => {
+    return /* @__PURE__ */ (0, import_jsx_runtime4.jsxs)("div", { children: [
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Header, { title: "Welcome!", className: "header" }),
+      /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Button, { description: "Click me!", className: "button", action: () => {
         setShowInput((prev) => !prev);
       } }),
-      showInput && /* @__PURE__ */ (0, import_jsx_runtime3.jsx)(Input, { id: "teste", type: "text", label: "Digite seu nome" })
+      showInput && /* @__PURE__ */ (0, import_jsx_runtime4.jsx)(Input, { id: "teste", type: "text", className: "input", label: "Digite seu nome" })
     ] });
   };
 
   // src/main.tsx
-  var import_jsx_runtime4 = __toESM(require_jsx_runtime());
+  var import_jsx_runtime5 = __toESM(require_jsx_runtime());
   var Root = import_client.default.createRoot(document.getElementById("root"));
-  Root.render(/* @__PURE__ */ (0, import_jsx_runtime4.jsx)(App, {}));
+  Root.render(/* @__PURE__ */ (0, import_jsx_runtime5.jsx)(App, {}));
 })();
 /*! Bundled license information:
 

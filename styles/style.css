@@ -20,3 +20,15 @@ body {
 .button:hover {
     cursor: pointer;
 }
+
+.input {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(190, 186, 186);
+}
